@@ -1,0 +1,7 @@
+To change which hosts can access the database change:
+/etc/mysql/my.cnf -> binding address. 0.0.0.0 for public, 127.0.0.1 for local
+
+To allow remote users into the database use the following example:
+mysql> CREATE USER 'monty'@'%' IDENTIFIED BY 'some_pass';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'monty'@'%'
+    ->     WITH GRANT OPTION; 
